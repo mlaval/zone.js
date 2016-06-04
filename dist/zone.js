@@ -1041,7 +1041,7 @@
 	        return obj;
 	    };
 	    Object.create = function (obj, proto) {
-	        if (typeof proto === 'object') {
+	        if (typeof proto === 'object' && !Object.isFrozen(proto)) {
 	            Object.keys(proto).forEach(function (prop) {
 	                proto[prop] = rewriteDescriptor(obj, prop, proto[prop]);
 	            });
