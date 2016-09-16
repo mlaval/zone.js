@@ -564,7 +564,7 @@ var Zone$1 = (function (global) {
             }
             // ignore output to prevent error;
             fetchPromise.then(function () { return null; }, function () { return null; });
-            if (fetchPromise.constructor != NativePromise) {
+            if (fetchPromise.constructor != NativePromise && fetchPromise.constructor != ZoneAwarePromise) {
                 patchThen(fetchPromise.constructor);
             }
         }
